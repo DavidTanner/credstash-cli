@@ -1,0 +1,28 @@
+{
+  "name": "credstash-cli",
+  "version": "1.0.0",
+  "description": "Node.js credstash CLI implementation",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.2.3",
+    "npm": ">=2.14.7"
+  },
+  "bin": {
+    "credstash": "./index.js"
+  },
+  "scripts": {},
+  "keywords": [
+    "credstash",
+    "kms",
+    "aws",
+    "node.js"
+  ],
+  "author": "David Tanner",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "js-yaml": "^3.6.1",
+    "nodecredstash": "^1.0.0",
+    "yargs": "^5.0.0"
+  }
+}
