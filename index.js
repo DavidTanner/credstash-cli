@@ -4,8 +4,7 @@
 process.env.DEBUG = 'credstash';
 
 const yargs = require('yargs');
-const fs = require('fs');
-const path = require('path');
+const glob = require('glob');
 const Credstash = require('nodecredstash');
 
 const defaults = require('./utils/defaults');
@@ -99,7 +98,7 @@ yargs
     describe: 'AWS IAM ARN for AssumeRole'
   });
 
-const files = fs.readdirSync('./commands/');
+const files = glob.sync('./commands/*.js');
 const opts = {yargs, defaults, getCredstash};
 
 Object.assign(opts,
@@ -107,10 +106,7 @@ Object.assign(opts,
   promise
 );
 
-files.forEach(file => {
-  const fileDir = `./commands/${file}`;
-  require(fileDir)(opts);
-});
+files.forEach(file => require(file)(opts));
 
 const argv = yargs
   .recommendCommands()
