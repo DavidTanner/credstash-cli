@@ -44,7 +44,7 @@ module.exports = function(opts) {
     const context = opts.convertKeyValuePairs(argv.context);
     const auto = argv.autoversion;
 
-    return getCredstash(argv)
+    return opts.getCredstash(argv)
       .then(credstash => Promise.all([
         credstash,
         opts.valueOrFilename(value),
