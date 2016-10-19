@@ -1,6 +1,6 @@
 {
   "name": "credstash-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Node.js credstash CLI implementation",
   "main": "index.js",
   "engines": {
