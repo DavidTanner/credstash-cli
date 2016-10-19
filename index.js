@@ -98,7 +98,7 @@ yargs
     describe: 'AWS IAM ARN for AssumeRole'
   });
 
-const files = glob.sync('./commands/*.js');
+const files = glob.sync('./commands/*.js', {cwd: __dirname});
 const opts = {yargs, defaults, getCredstash};
 
 Object.assign(opts,
